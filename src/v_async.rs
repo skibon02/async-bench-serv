@@ -21,7 +21,7 @@ pub fn run() {
 
 async fn run_worker() -> Result<()> {
 
-    let listener = TcpListener::bind("127.0.0.1:8080").await?;
+    let listener = TcpListener::bind(crate::addr).await?;
 
     let counter = Arc::new(AtomicU32::new(0));
     let counter_reader = counter.clone();

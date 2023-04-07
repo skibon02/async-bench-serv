@@ -7,7 +7,7 @@ use std::sync::atomic::AtomicU32;
 use std::thread;
 
 pub fn run() {
-    let listener = TcpListener::bind("127.0.0.1:8080").unwrap();
+    let listener = TcpListener::bind(crate::addr).unwrap();
 
     let counter = Arc::new(AtomicU32::new(0));
     let counter_reader = counter.clone();
